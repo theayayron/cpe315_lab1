@@ -90,7 +90,7 @@ void add_bytes_overflow(char a, char b) {
     char sum;
     sum = a + b;
 
-    printf("0x%02x + 0x%02x Overflow: ");
+    printf("0x%02x + 0x%02x Overflow: ", (unsigned char)a , (unsigned char)b);
     printf("%d\n", (a < 0 && b < 0 && sum > 0) || (a > 0 && b > 0 && sum < 0));
 }
 
@@ -107,10 +107,9 @@ unsigned int arbitrary_byte_add(unsigned char *result, unsigned char *a1,
     print_array(a2, size);
     printf("\n=\t");
 
-    for (i = 0; i < size; i++) {
+    for (i = size - 1; i >= 0; i--) {
         sum = a1[i] + a2[i] + carry;
         result[i] = (unsigned char) sum;
-
         carry = sum >> 8;
     }
     print_array(result, size);
@@ -118,8 +117,10 @@ unsigned int arbitrary_byte_add(unsigned char *result, unsigned char *a1,
 }
 
 void print_array(unsigned char *a, int size) {
-    while (--size >= 0) {
-        printf("0x%02x ", a[size]);
+    int i = 0;
+    while (i < size) {
+        printf("0x%02x ", a[i]);
+        i++;
     }
     printf("\n");
 }
