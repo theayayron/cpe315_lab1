@@ -56,7 +56,36 @@ void byteOrdering(void) {
   printf("\n");
   printf("%lx ", *c);
   printf("\n");
-  
+
+  /* 2e */
+  printf("\n");
+  printf("2e: ");
+  for(i = sizeof(bytestring); i > 0; i--) {
+    printf("%02x ", bytestring[i]);
+  }
+  printf("\n");
+
+  /* 2f */
+  printf("\n");
+  printf("2f: ");
+  for(i = 7; i > 3; i--) {
+    printf("%04x ", *(a + i));
+  }
+  printf("\n");
+
+  /* 2g */
+  printf("\n");
+  printf("2g: ");
+  for(i = 1; i > -1; i--) {
+    printf("%08x ", *(b + i));
+  }
+  printf("\n");
+
+  /* 2h */
+  printf("\n");
+  printf("2h: %016lx", *c);
+  printf("\n");
+
 }
 
 
