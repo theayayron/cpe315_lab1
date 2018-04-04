@@ -65,9 +65,11 @@ int main(int argc, char *argv[]) {
     /* part 6 */
     printf("Part 6: Performing Extended Field Arithmetic\n");
     printf("========================\n");
-    printf("\nCarry Out = %d\n", arbitrary_byte_add(a, a1, a2, 5, 0));
+    printf("6a)\n");
+    printf("\nCarry Out = %d\n\n", arbitrary_byte_add(a, a1, a2, 5, 0));
+    printf("6b)\n");
     printf("\nCarry Out = %d\n", arbitrary_byte_add(b, b1, b2, 5, 0));
-    printf("========================\n");
+    printf("========================");
 
     return 0;
 }
@@ -98,6 +100,12 @@ unsigned int arbitrary_byte_add(unsigned char *result, unsigned char *a1,
     int i, sum, carry;
 
     carry = carry_in;
+
+    printf("\t");
+    print_array(a1, size);
+    printf("+\t");
+    print_array(a2, size);
+    printf("\n=\t");
 
     for (i = 0; i < size; i++) {
         sum = a1[i] + a2[i] + carry;
