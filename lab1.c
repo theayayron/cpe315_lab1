@@ -85,6 +85,7 @@ void byteOrdering(void) {
   printf("\n");
   printf("2h: %016lx", *c);
   printf("\n");
+  printf("========================\n");
 
 }
 
