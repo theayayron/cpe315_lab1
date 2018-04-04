@@ -3,20 +3,22 @@
 #include <stdio.h>
 
 
-
+/* void -> void 
+ * creates a byte array and accesses the array as short
+ * integers, integers, and long integers. */
 void byteOrdering(void) {
   int i;
   unsigned char bytestring[] = {
     0x41, 0x33, 0x54, 0x80, 0xFF, 0x99, 0x01, 0x78,
     0x55, 0x20, 0xFE, 0xEE, 0x00, 0x00, 0x00, 0x00 };
 
-  short int *a;
-  int *b;
-  long int *c;
+  unsigned short int *a;
+  unsigned int *b;
+  unsigned long int *c;
 
-  a = (short int *)bytestring;
-  b = (int *)bytestring;
-  c = (long int *)bytestring;
+  a = (unsigned short int *)bytestring;
+  b = (unsigned int *)bytestring;
+  c = (unsigned long int *)bytestring;
 
   printf("Part 2: Byte Ordering\n");
   printf("========================\n");
@@ -34,10 +36,27 @@ void byteOrdering(void) {
   printf("\n");
   printf("Short Int versions of the first four values of an array in hexadecimal:\n");
   printf("\n");
-  for(i = 0; i < (4 * sizeof(unisigned char)); i += sizeof(unsigned char)) {
-    printf("%04x ", *(a + i));
+  for(i = 0; i < 4; i++) {
+    printf("%4x ", *(a+i));
   }
   printf("\n");
+
+  /* 2c */
+  printf("\n");
+  printf("Int versions of the first two values of an array in hexadecimal:\n");
+  printf("\n");
+  for(i = 0; i < 2; i++) {
+    printf("%08x ", *(b+i));
+  }
+  printf("\n");
+
+  /* 2d */
+  printf("\n");
+  printf("Long Int version of the first value of an array in hex:\n");
+  printf("\n");
+  printf("%lx ", *c);
+  printf("\n");
+  
 }
 
 
