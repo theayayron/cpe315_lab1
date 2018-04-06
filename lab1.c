@@ -200,6 +200,9 @@ void add_bytes_overflow(char a, char b) {
  * It also factors in a carry flag which will affect the rightmost
  * byte pair and propagate through to the leftmost byte pair before
  * being returned.
+ *
+ * It is assumed that result, a1, and a2 are not NULL pointers.
+ *
  * @param result the array where the resulting sums will be stored
  * @param a1 the first array of bytes to add
  * @param a2 the second array of bytes to add
