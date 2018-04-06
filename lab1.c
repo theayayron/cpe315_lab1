@@ -21,10 +21,10 @@ int main(int argc, char *argv[]) {
     /* part 1 */
     printf("Part 1: Data Types and their Sizes\n");
     printf("========================\n");
-    printf("Byte Size: %d\n", sizeof(unsigned char));
-    printf("Short Int Size: %d\n", sizeof(short int));
-    printf("Int Size: %d\n", sizeof(int));
-    printf("Long Int Size: %d\n", sizeof(long int));
+    printf("Byte Size: %lu\n", sizeof(unsigned char));
+    printf("Short Int Size: %lu\n", sizeof(short int));
+    printf("Int Size: %lu\n", sizeof(int));
+    printf("Long Int Size: %lu\n", sizeof(long int));
     printf("========================\n\n");
 
     /* part 2 */
